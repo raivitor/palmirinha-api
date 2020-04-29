@@ -1,5 +1,10 @@
 # palmirinha-api
 
+## API public
+
+https://palmirinha-api.herokuapp.com/
+
+
 ## Project setup
 
 
@@ -88,5 +93,5 @@ Returns recipes that have the ingredients that were passed in the parameter.
 
 - **Sample Call:**
   ```
-   curl --location --request GET 'localhost:3000/recipes/?i=onions,garlic'
+   curl --location --request GET 'https://palmirinha-api.herokuapp.com/recipes/?i=onions,garlic'
   ```
