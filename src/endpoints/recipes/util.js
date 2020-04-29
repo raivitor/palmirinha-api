@@ -13,6 +13,16 @@ export async function getGif(title) {
   return gif.data.data.length === 1 ? gif.data.data[0].url : 'No gif found';
 }
 
+export async function getRecipe(items) {
+  const recipes = await axios
+    .get(`${CONFIGS.RECIPE_PUPPY_URL}/?i=${items}`)
+    .catch(e => {
+      throw 'RecipePuppy API error';
+    });
+
+  return recipes.data;
+}
+
 export function sortIngredients(ingredients) {
   return ingredients
     .split(',')
