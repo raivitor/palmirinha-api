@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon -L server.js",
     "test": "jest --forceExit"
   },
   "repository": "https://github.com/raivitor/palmirinha-api.git",
