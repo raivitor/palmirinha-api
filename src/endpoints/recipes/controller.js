@@ -1,20 +1,14 @@
-import axios from 'axios';
 import { errorResolver } from '../../util/errorResolver';
-import { CONFIGS } from '../../util/configs';
-import { getGif, sortIngredients } from './util';
+import { getGif, sortIngredients, getRecipe } from './util';
 
 const getRecipes = async (req, res) => {
   try {
     const i = req.query.i;
 
-    const puppyReturn = await axios
-      .get(`${CONFIGS.RECIPE_PUPPY_URL}/?i=${i}`)
-      .catch(() => {
-        throw 'RecipePuppy API error';
-      });
+    const puppyReturn = await getRecipe(i);
 
     const recipes = await Promise.all(
-      puppyReturn.data.results.map(async item => ({
+      puppyReturn.results.map(async item => ({
         title: item.title.trim(),
         ingredients: sortIngredients(item.ingredients),
         link: item.href,
