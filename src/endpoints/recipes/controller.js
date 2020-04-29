@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { errorResolver } from '../../util/errorResolver';
 import { CONFIGS } from '../../util/configs';
-import { sortIngredients } from './util';
+import { getGif, sortIngredients } from './util';
 
 const getRecipes = async (req, res) => {
   try {
@@ -18,7 +18,7 @@ const getRecipes = async (req, res) => {
         title: item.title.trim(),
         ingredients: sortIngredients(item.ingredients),
         link: item.href,
-        gif: item.title
+        gif: await getGif(item.title.trim())
       }))
     );
 
