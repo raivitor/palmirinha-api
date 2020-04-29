@@ -5,6 +5,8 @@ services:
     restart: always
     build: .
     command: npm start
+    environment:
+      - GIPHY_API_KEY=SpmIUSIToFAtbNjAg2x7UJwXRNOniFaC
     ports:
       - '3000:3000'
     volumes:
@@ -17,6 +19,8 @@ services:
     build: .
     image: app
     command: npm run test
+    environment:
+      - GIPHY_API_KEY=SpmIUSIToFAtbNjAg2x7UJwXRNOniFaC
     volumes:
       - .:/usr/app
       - node_modules:/usr/app/node_modules
