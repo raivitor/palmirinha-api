@@ -10,7 +10,7 @@
   "author": "Rai Vitor <raivitor@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "1.6.0",
     "express": "4.17.1",
     "express-validator": "6.4.0",
     "nodemon": "2.0.3",
